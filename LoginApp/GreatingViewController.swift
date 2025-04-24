@@ -11,21 +11,22 @@ final class GreatingViewController: UIViewController {
 
     // MARK: - @IBOutlets
     
-    
     // MARK: - Private properties
+    
+    var user = ""
     
     
     // MARK: View Lifecycle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
     
-    }
+    // MARK: - Override methods
+    
     
     // MARK: - @IBActions
+
     
     
     // MARK: - Private methods
+    
 
 }
