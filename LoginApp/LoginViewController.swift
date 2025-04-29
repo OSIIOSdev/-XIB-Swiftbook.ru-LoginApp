@@ -14,20 +14,25 @@ final class LoginViewController: UIViewController {
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var usernameTextField: UITextField!
     
+    @IBOutlet var logInButton: UIButton!
+    
     @IBOutlet var forgotUsernameButton: UIButton!
+    @IBOutlet var forgotPasswordButton: UIButton!
     
     
     // MARK: - Private properties
     
     private let username = "Username"
     private let password = "Password"
+
     
-    // MARK: View Lifecycle
-    
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        getButtonConfiguration(buttons: logInButton, forgotPasswordButton, forgotUsernameButton)
     }
+    
     
     // MARK: - Override methods
     
@@ -45,7 +50,7 @@ final class LoginViewController: UIViewController {
             
             return }
         
-        guard let greatingVC = segue.destination as? GreatingViewController else { return }
+        guard let greatingVC = segue.destination as? GreetingViewController else { return }
         
         greatingVC.user = username
         
@@ -80,6 +85,12 @@ final class LoginViewController: UIViewController {
     }
     
     // MARK: - Private methods
+    
+    private func getButtonConfiguration(buttons: UIButton...) {
+        for button in buttons {
+            button.layer.cornerRadius = 10
+        }
+    }
 
     private func getAlertController(title: String, message: String, textField: UITextField? = nil) {
         

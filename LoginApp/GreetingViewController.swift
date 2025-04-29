@@ -7,9 +7,12 @@
 
 import UIKit
 
-final class GreatingViewController: UIViewController {
+final class GreetingViewController: UIViewController {
 
     // MARK: - @IBOutlets
+    
+    @IBOutlet var logOutButton: UIButton!
+    
     
     // MARK: - Private properties
     
@@ -17,7 +20,11 @@ final class GreatingViewController: UIViewController {
     
     
     // MARK: View Lifecycle
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        logOutButton.layer.cornerRadius = 10
+    }
     
     // MARK: - Override methods
     
@@ -28,5 +35,4 @@ final class GreatingViewController: UIViewController {
     
     // MARK: - Private methods
     
-
 }
